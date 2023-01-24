@@ -26,7 +26,7 @@ final class LoginViewController: UIViewController {
         scrollView.addGestureRecognizer(tapGesture)
     }
             
-    @objc func keyboardWillShown(notification: Notification) {
+    @objc private func keyboardWillShown(notification: Notification) {
         let info = notification.userInfo as? NSDictionary
         let kbSize = (info?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)?.cgRectValue.size
                 
@@ -36,7 +36,7 @@ final class LoginViewController: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
             
-    @objc func keyboardWillHide(notification: Notification) {
+    @objc private func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
@@ -49,7 +49,7 @@ final class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
             
-    @objc func hideKeyboard() {
+    @objc private func hideKeyboard() {
         scrollView.endEditing(true)
     }
 
