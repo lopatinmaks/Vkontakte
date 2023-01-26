@@ -10,7 +10,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var vkImageView: UIImageView!
+    @IBOutlet private var vkImageView: UIImageView!
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
@@ -27,6 +27,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func keyboardWillShown(notification: Notification) {
+        
         let info = notification.userInfo as? NSDictionary
         let kbSize = (info?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)?.cgRectValue.size
         
@@ -37,6 +38,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
+        
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
@@ -45,14 +47,17 @@ final class LoginViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     @objc private func hideKeyboard() {
+        
         scrollView.endEditing(true)
     }
     
     private func checkLoginInfo() -> Bool {
+        
         guard let loginText = loginTextField.text,
               let passwordText = passwordTextField.text else { return false }
         
@@ -68,6 +73,7 @@ final class LoginViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         if  identifier == "loginSegue" {
+            
             if checkLoginInfo() {
                 return true
             } else {
@@ -77,8 +83,12 @@ final class LoginViewController: UIViewController {
         }
         return true
     }
+}
+
+extension LoginViewController {
     
     private func showLoginError() {
+        
         let alert = UIAlertController(title: "Ошибка", message: "Логин и/или пароль не верны", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .cancel)
