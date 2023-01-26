@@ -72,7 +72,7 @@ final class LoginViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if  identifier == "loginSegue" {
+        if identifier == "loginSegue" {
             
             if checkLoginInfo() {
                 return true
