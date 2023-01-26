@@ -15,6 +15,7 @@
 		77BACDD0297FDFB400AA63F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77BACDCE297FDFB400AA63F5 /* LaunchScreen.storyboard */; };
 		77BACDDC29810AFD00AA63F5 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDDB29810AFD00AA63F5 /* Groups.swift */; };
 		77BACDDE29810B7100AA63F5 /* GlobalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDDD29810B7100AA63F5 /* GlobalSearch.swift */; };
+		77BACDEA29829D4800AA63F5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 77BACDE929829D4800AA63F5 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		77BACDD1297FDFB400AA63F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77BACDDB29810AFD00AA63F5 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		77BACDDD29810B7100AA63F5 /* GlobalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearch.swift; sourceTree = "<group>"; };
+		77BACDE929829D4800AA63F5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		77BACDB7297FDFB000AA63F5 = {
 			isa = PBXGroup;
 			children = (
+				77BACDE929829D4800AA63F5 /* .gitignore */,
 				77BACDC2297FDFB000AA63F5 /* VKontakte */,
 				77BACDC1297FDFB000AA63F5 /* Products */,
 			);
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BACDEA29829D4800AA63F5 /* .gitignore in Resources */,
 				77BACDD0297FDFB400AA63F5 /* LaunchScreen.storyboard in Resources */,
 				77BACDCD297FDFB400AA63F5 /* Assets.xcassets in Resources */,
 				77BACDCB297FDFB000AA63F5 /* Main.storyboard in Resources */,
