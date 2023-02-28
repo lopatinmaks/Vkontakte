@@ -10,6 +10,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     //MARK: - IBOutlets
+    
     @IBOutlet private var vkImageView: UIImageView!
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var loginTextField: UITextField!
