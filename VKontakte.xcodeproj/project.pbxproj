@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */; };
 		77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */; };
 		77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */; };
 		77BACDC8297FDFB000AA63F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC7297FDFB000AA63F5 /* LoginViewController.swift */; };
 		77BACDCB297FDFB000AA63F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77BACDC9297FDFB000AA63F5 /* Main.storyboard */; };
 		77BACDCD297FDFB400AA63F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77BACDCC297FDFB400AA63F5 /* Assets.xcassets */; };
 		77BACDD0297FDFB400AA63F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77BACDCE297FDFB400AA63F5 /* LaunchScreen.storyboard */; };
-		77BACDDC29810AFD00AA63F5 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDDB29810AFD00AA63F5 /* Groups.swift */; };
-		77BACDDE29810B7100AA63F5 /* GlobalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDDD29810B7100AA63F5 /* GlobalSearch.swift */; };
+		77BACDDC29810AFD00AA63F5 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDDB29810AFD00AA63F5 /* GroupsTableViewController.swift */; };
+		77BACDDE29810B7100AA63F5 /* GlobalSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDDD29810B7100AA63F5 /* GlobalSearchTableViewController.swift */; };
 		77BACDEA29829D4800AA63F5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 77BACDE929829D4800AA63F5 /* .gitignore */; };
+		77BACDEC2983B53F00AA63F5 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDEB2983B53F00AA63F5 /* Friends.swift */; };
+		77BACDEE2983B62400AA63F5 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDED2983B62400AA63F5 /* FriendsList.swift */; };
+		77BACDF22983BBC100AA63F5 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDF12983BBC100AA63F5 /* FriendsListTableViewController.swift */; };
+		77BACDF42983F95100AA63F5 /* PersonCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDF32983F95000AA63F5 /* PersonCollectionViewController.swift */; };
+		77BACDF62983FD1400AA63F5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDF52983FD1400AA63F5 /* CollectionViewCell.swift */; };
+		77BACDF929840A0700AA63F5 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDF829840A0700AA63F5 /* GroupCell.swift */; };
+		77BACDFB29840B5A00AA63F5 /* MyGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDFA29840B5A00AA63F5 /* MyGroups.swift */; };
+		77BACDFD298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDFC298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		77BACDC0297FDFB000AA63F5 /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +37,17 @@
 		77BACDCC297FDFB400AA63F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77BACDCF297FDFB400AA63F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77BACDD1297FDFB400AA63F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77BACDDB29810AFD00AA63F5 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
-		77BACDDD29810B7100AA63F5 /* GlobalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearch.swift; sourceTree = "<group>"; };
+		77BACDDB29810AFD00AA63F5 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		77BACDDD29810B7100AA63F5 /* GlobalSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearchTableViewController.swift; sourceTree = "<group>"; };
 		77BACDE929829D4800AA63F5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		77BACDEB2983B53F00AA63F5 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		77BACDED2983B62400AA63F5 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		77BACDF12983BBC100AA63F5 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
+		77BACDF32983F95000AA63F5 /* PersonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewController.swift; sourceTree = "<group>"; };
+		77BACDF52983FD1400AA63F5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		77BACDF829840A0700AA63F5 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		77BACDFA29840B5A00AA63F5 /* MyGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroups.swift; sourceTree = "<group>"; };
+		77BACDFC298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearchCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +83,48 @@
 			children = (
 				77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */,
 				77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */,
-				77BACDC7297FDFB000AA63F5 /* LoginViewController.swift */,
 				77BACDC9297FDFB000AA63F5 /* Main.storyboard */,
-				77BACDDD29810B7100AA63F5 /* GlobalSearch.swift */,
-				77BACDDB29810AFD00AA63F5 /* Groups.swift */,
+				77BACDFF2984FD1900AA63F5 /* View */,
+				77BACDF7298404BB00AA63F5 /* Model */,
+				77BACDFE2984FCFF00AA63F5 /* Controller */,
 				77BACDCC297FDFB400AA63F5 /* Assets.xcassets */,
 				77BACDCE297FDFB400AA63F5 /* LaunchScreen.storyboard */,
 				77BACDD1297FDFB400AA63F5 /* Info.plist */,
 			);
 			path = VKontakte;
+			sourceTree = "<group>";
+		};
+		77BACDF7298404BB00AA63F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77BACDEB2983B53F00AA63F5 /* Friends.swift */,
+				77BACDFA29840B5A00AA63F5 /* MyGroups.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77BACDFE2984FCFF00AA63F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77BACDDB29810AFD00AA63F5 /* GroupsTableViewController.swift */,
+				77BACDF32983F95000AA63F5 /* PersonCollectionViewController.swift */,
+				77BACDF12983BBC100AA63F5 /* FriendsListTableViewController.swift */,
+				77BACDC7297FDFB000AA63F5 /* LoginViewController.swift */,
+				77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */,
+				77BACDDD29810B7100AA63F5 /* GlobalSearchTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77BACDFF2984FD1900AA63F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77BACDFC298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift */,
+				77BACDF52983FD1400AA63F5 /* CollectionViewCell.swift */,
+				77BACDED2983B62400AA63F5 /* FriendsList.swift */,
+				77BACDF829840A0700AA63F5 /* GroupCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,11 +199,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BACDF62983FD1400AA63F5 /* CollectionViewCell.swift in Sources */,
+				77BACDEE2983B62400AA63F5 /* FriendsList.swift in Sources */,
+				77BACDF929840A0700AA63F5 /* GroupCell.swift in Sources */,
 				77BACDC8297FDFB000AA63F5 /* LoginViewController.swift in Sources */,
+				77BACDEC2983B53F00AA63F5 /* Friends.swift in Sources */,
 				77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */,
-				77BACDDE29810B7100AA63F5 /* GlobalSearch.swift in Sources */,
+				77BACDDE29810B7100AA63F5 /* GlobalSearchTableViewController.swift in Sources */,
+				77BACDFB29840B5A00AA63F5 /* MyGroups.swift in Sources */,
+				77BACDF42983F95100AA63F5 /* PersonCollectionViewController.swift in Sources */,
+				77BACDF22983BBC100AA63F5 /* FriendsListTableViewController.swift in Sources */,
 				77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */,
-				77BACDDC29810AFD00AA63F5 /* Groups.swift in Sources */,
+				77BACDDC29810AFD00AA63F5 /* GroupsTableViewController.swift in Sources */,
+				77BACDFD298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift in Sources */,
+				77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

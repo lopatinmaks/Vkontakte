@@ -10,6 +10,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     //MARK: - IBOutlets
+    
     @IBOutlet private var vkImageView: UIImageView!
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var loginTextField: UITextField!
@@ -77,7 +78,7 @@ final class LoginViewController: UIViewController {
             if checkLoginInfo() {
                 return true
             } else {
-                showLoginError()
+                showLoginError(title: "Ошибка", message: "Логин и/или пароль не верны", style: .alert)
                 return false
             }
         }
@@ -85,16 +86,3 @@ final class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController {
-    
-    private func showLoginError() {
-        
-        let alert = UIAlertController(title: "Ошибка", message: "Логин и/или пароль не верны", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "OK", style: .cancel)
-        
-        alert.addAction(action)
-        
-        present(alert, animated: true)
-    }
-}
