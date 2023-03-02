@@ -42,11 +42,6 @@ final class GroupsTableViewController: UITableViewController {
         }
     }
     
-//    func addGroup(naming: String) {
-//        myGroups.append(MyGroups(nameOfGroup: naming, avatarGroup: naming))
-//        tableView.reloadData()
-//    }
-    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,20 +83,4 @@ final class GroupsTableViewController: UITableViewController {
     }
 }
 
-extension UIViewController {
-    func createAlert(title: String, message: String, style: UIAlertController.Style, completion: @escaping (String?) -> ()) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        alert.addTextField { (textfield) in
-            textfield.placeholder = "Название группы"
-        }
-        
-        let action = UIAlertAction(title: "OK", style: .default) {
-            action in
-            guard let firstText = alert.textFields?.first else { return }
-            completion(firstText.text)
-        }
-        
-        alert.addAction(action)
-        present(alert, animated: true)
-    }
-}
+

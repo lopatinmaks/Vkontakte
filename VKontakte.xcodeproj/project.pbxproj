@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */; };
 		77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */; };
 		77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */; };
 		77BACDC8297FDFB000AA63F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC7297FDFB000AA63F5 /* LoginViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		77BACDC0297FDFB000AA63F5 /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				77BACDF32983F95000AA63F5 /* PersonCollectionViewController.swift */,
 				77BACDF12983BBC100AA63F5 /* FriendsListTableViewController.swift */,
 				77BACDC7297FDFB000AA63F5 /* LoginViewController.swift */,
+				77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */,
 				77BACDDD29810B7100AA63F5 /* GlobalSearchTableViewController.swift */,
 			);
 			path = Controller;
@@ -209,6 +212,7 @@
 				77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */,
 				77BACDDC29810AFD00AA63F5 /* GroupsTableViewController.swift in Sources */,
 				77BACDFD298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift in Sources */,
+				77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

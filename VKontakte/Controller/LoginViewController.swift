@@ -86,16 +86,3 @@ final class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController {
-    
-    private func showLoginError(title: String, message: String, style: UIAlertController.Style) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        
-        let action = UIAlertAction(title: "OK", style: .cancel)
-        
-        alert.addAction(action)
-        
-        present(alert, animated: true)
-    }
-}
