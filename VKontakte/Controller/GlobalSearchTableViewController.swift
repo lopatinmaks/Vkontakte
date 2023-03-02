@@ -42,7 +42,7 @@ final class GlobalSearchTableViewController: UITableViewController {
         
         let info = globalGroup[indexPath.row]
         
-        cell.setup(global: info)
+        cell.configure(global: info)
         
         return cell
     }

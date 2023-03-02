@@ -19,7 +19,7 @@ final class CollectionViewCell: UICollectionViewCell {
     var name: String?
     var avatar: String?
     
-    func setup(name: String, avatar: String) {
+    func configure(name: String, avatar: String) {
         nameLabel.text = name
         photoImageView.image = UIImage(named: avatar )
     }

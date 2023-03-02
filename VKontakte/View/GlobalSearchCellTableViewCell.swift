@@ -20,7 +20,7 @@ final class GlobalSearchCellTableViewCell: UITableViewCell {
         photo.layer.cornerRadius = 36
     }
     
-    func setup(global: MyGroups) {
+    func configure(global: MyGroups) {
         name.text = global.nameOfGroup
         photo.image = UIImage(named: global.avatarGroup)
     }

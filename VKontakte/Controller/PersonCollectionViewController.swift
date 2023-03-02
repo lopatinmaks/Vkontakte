@@ -13,7 +13,7 @@ final class PersonCollectionViewController: UICollectionViewController {
     
     var name: String?
     var picture: String?
-    var defaultPhoto: String = ""
+    var defaultPhoto: String = "Ждун"
     
     //MARK: - Life cicle
     
@@ -36,7 +36,7 @@ final class PersonCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else { fatalError() }
         
-        cell.setup(name: name ?? defaultPhoto, avatar: picture ?? defaultPhoto)
+        cell.configure(name: name ?? defaultPhoto, avatar: picture ?? defaultPhoto)
 
         return cell
     }

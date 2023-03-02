@@ -36,13 +36,16 @@ final class GroupsTableViewController: UITableViewController {
     //MARK: - IBAction and method for add group
     
     @IBAction func addGroup(_ sender: Any) {
-        createAlert()
+        createAlert(title: "Добавить группу", message: "", style: .alert) { naming in
+            self.myGroups.append(MyGroups(nameOfGroup: naming ?? "", avatarGroup: naming ?? ""))
+            self.tableView.reloadData()
+        }
     }
     
-    private func addGroup(naming: String) {
-        myGroups.append(MyGroups(nameOfGroup: naming, avatarGroup: naming))
-        tableView.reloadData()
-    }
+//    func addGroup(naming: String) {
+//        myGroups.append(MyGroups(nameOfGroup: naming, avatarGroup: naming))
+//        tableView.reloadData()
+//    }
     
     // MARK: - Table view data source
     
@@ -55,7 +58,7 @@ final class GroupsTableViewController: UITableViewController {
         
         let info = myGroups[indexPath.row]
         
-        cell.setup(groups: info)
+        cell.configure(groups: info)
     
         return cell
     }
@@ -85,17 +88,17 @@ final class GroupsTableViewController: UITableViewController {
     }
 }
 
-extension GroupsTableViewController {
-    func createAlert() {
-        let alert = UIAlertController(title: "Добавить группу", message: nil, preferredStyle: .alert)
+extension UIViewController {
+    func createAlert(title: String, message: String, style: UIAlertController.Style, completion: @escaping (String?) -> ()) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         alert.addTextField { (textfield) in
             textfield.placeholder = "Название группы"
         }
         
-        let action = UIAlertAction(title: "OK", style: .default) { [weak self]
+        let action = UIAlertAction(title: "OK", style: .default) {
             action in
             guard let firstText = alert.textFields?.first else { return }
-            self?.addGroup(naming: firstText.text ?? "")
+            completion(firstText.text)
         }
         
         alert.addAction(action)

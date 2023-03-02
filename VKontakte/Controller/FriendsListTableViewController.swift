@@ -59,7 +59,7 @@ final class FriendsListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsCell", for: indexPath) as? FriendsList else { fatalError() }
         let date = friends[indexPath.row]
         
-        cell.setup(list: date)
+        cell.configure(list: date)
         
         return cell
     }

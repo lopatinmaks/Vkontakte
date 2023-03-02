@@ -20,7 +20,7 @@ final class FriendsList: UITableViewCell {
         avatarImageView.layer.cornerRadius = 36
     }
     
-    func setup(list: Friends) {
+    func configure(list: Friends) {
         nameLabel.text = list.name
         avatarImageView.image = UIImage(named: list.avatar)
     }

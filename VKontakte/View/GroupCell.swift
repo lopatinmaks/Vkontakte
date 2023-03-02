@@ -20,7 +20,7 @@ final class GroupCell: UITableViewCell {
         avatarGroupImageView.layer.cornerRadius = 36
     }
     
-    func setup(groups: MyGroups) {
+    func configure(groups: MyGroups) {
         nameGroupLabel.text = groups.nameOfGroup
         avatarGroupImageView.image = UIImage(named: groups.avatarGroup)
     }

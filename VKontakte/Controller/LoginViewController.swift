@@ -78,7 +78,7 @@ final class LoginViewController: UIViewController {
             if checkLoginInfo() {
                 return true
             } else {
-                showLoginError()
+                showLoginError(title: "Ошибка", message: "Логин и/или пароль не верны", style: .alert)
                 return false
             }
         }
@@ -88,9 +88,9 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController {
     
-    private func showLoginError() {
+    private func showLoginError(title: String, message: String, style: UIAlertController.Style) {
         
-        let alert = UIAlertController(title: "Ошибка", message: "Логин и/или пароль не верны", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         
         let action = UIAlertAction(title: "OK", style: .cancel)
         
