@@ -8,6 +8,6 @@
 import Foundation
 
 struct MyGroups {
-    var nameOfGroup: String?
-    var avatarGroup: String?
+    let nameOfGroup: String
+    let avatarGroup: String
 }

@@ -1,5 +1,5 @@
 //
-//  Groups.swift
+//  GroupsTableViewController.swift
 //  VKontakte
 //
 //  Created by Ольга on 25.01.2023.
@@ -7,12 +7,11 @@
 
 import UIKit
 
-final class Groups: UITableViewController {
+final class GroupsTableViewController: UITableViewController {
     
     //MARK: - Propertys array
     
     private var myGroups = [
-        
         MyGroups(nameOfGroup: "Сам себе психолог", avatarGroup: "15"),
         MyGroups(nameOfGroup: "Котики", avatarGroup: "16"),
         MyGroups(nameOfGroup: "Лучшие фильмы", avatarGroup: "17"),
@@ -37,24 +36,10 @@ final class Groups: UITableViewController {
     //MARK: - IBAction and method for add group
     
     @IBAction func addGroup(_ sender: Any) {
-        
-        let alert = UIAlertController(title: "Добавить группу", message: nil, preferredStyle: .alert)
-        alert.addTextField { (textfield) in
-            textfield.placeholder = "Название группы"
-        }
-        
-        let action = UIAlertAction(title: "OK", style: .default) { [weak self, weak alert]
-            (action) in
-            guard let firstText = alert?.textFields?.first else { return }
-            self?.addGroup(naming: firstText.text ?? "")
-        }
-        
-        alert.addAction(action)
-        present(alert, animated: true)
+        createAlert()
     }
     
     private func addGroup(naming: String) {
-        
         myGroups.append(MyGroups(nameOfGroup: naming, avatarGroup: naming))
         tableView.reloadData()
     }
@@ -62,43 +47,58 @@ final class Groups: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return myGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupsCell", for: indexPath) as? GroupCell else { fatalError() }
         
         let info = myGroups[indexPath.row]
         
-        cell.nameGroupLabel.text = info.nameOfGroup
-        cell.avatarGroupImageView.image = UIImage(named: info.avatarGroup ?? "")
-
+        cell.setup(groups: info)
+    
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 100.0
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
+        switch editingStyle {
+        case .delete:
             myGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        default:
+            break
         }
     }
     
     //MARK: - IBAction go in next VC
     
     @IBAction func addWord(_ sender: UIBarButtonItem) {
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        guard let searchVC = storyboard.instantiateViewController(withIdentifier: "searchVC") as? GlobalSearch else { return }
+        guard let searchVC = storyboard.instantiateViewController(withIdentifier: "searchVC") as? GlobalSearchTableViewController else { return }
         
         present(searchVC, animated: true)
+    }
+}
+
+extension GroupsTableViewController {
+    func createAlert() {
+        let alert = UIAlertController(title: "Добавить группу", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Название группы"
+        }
+        
+        let action = UIAlertAction(title: "OK", style: .default) { [weak self]
+            action in
+            guard let firstText = alert.textFields?.first else { return }
+            self?.addGroup(naming: firstText.text ?? "")
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }

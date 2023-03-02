@@ -1,5 +1,5 @@
 //
-//  GlobalSearch.swift
+//  GlobalSearchTableViewController.swift
 //  VKontakte
 //
 //  Created by Ольга on 25.01.2023.
@@ -7,12 +7,11 @@
 
 import UIKit
 
-final class GlobalSearch: UITableViewController {
+final class GlobalSearchTableViewController: UITableViewController {
     
     //MARK: - Propertys array
     
     private var globalGroup = [
-        
         MyGroups(nameOfGroup: "Курсы начинающих пикаперов", avatarGroup: "27"),
         MyGroups(nameOfGroup: "Крастоки твоего города", avatarGroup: "28"),
         MyGroups(nameOfGroup: "Аниматоры на детское мероприятие", avatarGroup: "29"),
@@ -35,19 +34,16 @@ final class GlobalSearch: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return globalGroup.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "globalSearchGroup", for: indexPath) as? GlobalSearchCellTableViewCell else { fatalError() }
         
         let info = globalGroup[indexPath.row]
         
-        cell.name.text = info.nameOfGroup
-        cell.photo.image = UIImage(named: info.avatarGroup ?? "")
-
+        cell.setup(global: info)
+        
         return cell
     }
     

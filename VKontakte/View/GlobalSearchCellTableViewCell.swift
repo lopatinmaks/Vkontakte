@@ -11,12 +11,17 @@ final class GlobalSearchCellTableViewCell: UITableViewCell {
     
     //MARK: - IBOutlets
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet private var name: UILabel!
+    @IBOutlet private var photo: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     
         photo.layer.cornerRadius = 36
+    }
+    
+    func setup(global: MyGroups) {
+        name.text = global.nameOfGroup
+        photo.image = UIImage(named: global.avatarGroup)
     }
 }

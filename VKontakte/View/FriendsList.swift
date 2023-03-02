@@ -11,12 +11,17 @@ final class FriendsList: UITableViewCell {
     
     //MARK: - IBOutlets
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var avatarImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         avatarImageView.layer.cornerRadius = 36
+    }
+    
+    func setup(list: Friends) {
+        nameLabel.text = list.name
+        avatarImageView.image = UIImage(named: list.avatar)
     }
 }

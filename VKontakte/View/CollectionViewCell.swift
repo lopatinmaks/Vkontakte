@@ -11,19 +11,16 @@ final class CollectionViewCell: UICollectionViewCell {
     
     //MARK: - IBOutlets
     
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel! 
+    @IBOutlet private var photoImageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel! 
       
     //MARK: - Propertys
     
     var name: String?
     var avatar: String?
-        
-    init?(photoImageView: UIImageView!, nameLabel: UILabel!) {
-        super.init(frame: .zero)
-    }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    func setup(name: String, avatar: String) {
+        nameLabel.text = name
+        photoImageView.image = UIImage(named: avatar )
     }
 }

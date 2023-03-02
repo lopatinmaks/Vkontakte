@@ -11,17 +11,15 @@ final class PersonCollectionViewController: UICollectionViewController {
     
     //MARK: - Propertys
     
-    var persons = [Friends]()
-    
     var name: String?
     var picture: String?
+    var defaultPhoto: String = ""
     
     //MARK: - Life cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let friends = [Friends]()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,13 +30,13 @@ final class PersonCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1 }
+        return 1
+    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else { fatalError() }
         
-        cell.photoImageView.image = UIImage(named: picture ?? "")
-        cell.nameLabel.text = name
+        cell.setup(name: name ?? defaultPhoto, avatar: picture ?? defaultPhoto)
 
         return cell
     }

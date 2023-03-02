@@ -12,7 +12,6 @@ final class FriendsListTableViewController: UITableViewController {
     //MARK: - Propertys array
     
     private var friends = [
-        
         Friends(name: "Брат", avatar: "1"),
         Friends(name: "Сестра", avatar: "2"),
         Friends(name: "Дедуля", avatar: "3"),
@@ -46,24 +45,21 @@ final class FriendsListTableViewController: UITableViewController {
            let destiantion = segue.destination as? PersonCollectionViewController {
             destiantion.name = name?.name
             destiantion.picture = picture?.avatar
-           }
-    }
+            }
+        }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsCell", for: indexPath) as? FriendsList else { fatalError() }
-        
         let date = friends[indexPath.row]
         
-        cell.nameLabel.text = date.name
-        cell.avatarImageView.image = UIImage(named: date.avatar ?? "")
+        cell.setup(list: date)
         
         return cell
     }
@@ -75,6 +71,6 @@ final class FriendsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         name = friends[indexPath.row]
         picture = friends[indexPath.row]
-        self.performSegue(withIdentifier: "personVC", sender: nil)
+        performSegue(withIdentifier: "personVC", sender: nil)
     }
 }

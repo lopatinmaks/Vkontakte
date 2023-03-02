@@ -11,12 +11,17 @@ final class GroupCell: UITableViewCell {
     
     //MARK: - IBOutlets
     
-    @IBOutlet weak var nameGroupLabel: UILabel!
-    @IBOutlet weak var avatarGroupImageView: UIImageView!
+    @IBOutlet private var nameGroupLabel: UILabel!
+    @IBOutlet private var avatarGroupImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         avatarGroupImageView.layer.cornerRadius = 36
+    }
+    
+    func setup(groups: MyGroups) {
+        nameGroupLabel.text = groups.nameOfGroup
+        avatarGroupImageView.image = UIImage(named: groups.avatarGroup)
     }
 }
