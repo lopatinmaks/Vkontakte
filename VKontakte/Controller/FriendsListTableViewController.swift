@@ -28,6 +28,9 @@ final class FriendsListTableViewController: UITableViewController {
         Friends(name: "Отамай Зантунгатова", avatar: "14")
     ]
     
+    private var sections: [Character: [Friends]] = [:]
+    private var sectionTitles = [Character]()
+    
     var name: Friends?
     var picture: Friends?
     
@@ -36,6 +39,17 @@ final class FriendsListTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44.0
+        
+        for human in friends {
+            let firstLetter = human.name.first!
+            
+            if sections[firstLetter] != nil {
+                sections[firstLetter]?.append(human)
+            } else {
+                sections[firstLetter] = [human]
+            }
+        }
+        sectionTitles = Array(sections.keys)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,16 +64,33 @@ final class FriendsListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15.0
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return sections[sectionTitles[section]]?.count ?? 0
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitles.map{ String($0)}
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(sectionTitles[section])
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsCell", for: indexPath) as? FriendsList else { fatalError() }
-        let date = friends[indexPath.row]
+        
+        guard let date = sections[sectionTitles[indexPath.section]]?[indexPath.row] else { fatalError() }
         
         cell.configure(list: date)
+        cell.backgroundColor = .systemGray5
         
         return cell
     }
@@ -69,8 +100,8 @@ final class FriendsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        name = friends[indexPath.row]
-        picture = friends[indexPath.row]
+        name = sections[sectionTitles[indexPath.section]]?[indexPath.row]
+        picture = sections[sectionTitles[indexPath.section]]?[indexPath.row]
         performSegue(withIdentifier: "personVC", sender: nil)
     }
 }

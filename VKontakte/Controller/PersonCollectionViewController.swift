@@ -13,13 +13,12 @@ final class PersonCollectionViewController: UICollectionViewController {
     
     var name: String?
     var picture: String?
-    var defaultPhoto: String = "Ждун"
-    
+    private var defaultPhoto: String = "Ждун"
+
     //MARK: - Life cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
