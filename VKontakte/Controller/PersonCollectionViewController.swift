@@ -13,13 +13,13 @@ final class PersonCollectionViewController: UICollectionViewController {
     
     var name: String?
     var picture: String?
-    var defaultPhoto: String = "Ждун"
-    
+    private var defaultPhoto: String = "Ждун"
+    var countHeart = ""
+
     //MARK: - Life cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +36,7 @@ final class PersonCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else { fatalError() }
         
-        cell.configure(name: name ?? defaultPhoto, avatar: picture ?? defaultPhoto)
+        cell.configure(name: name ?? defaultPhoto, avatar: picture ?? defaultPhoto, count: countHeart)
 
         return cell
     }
