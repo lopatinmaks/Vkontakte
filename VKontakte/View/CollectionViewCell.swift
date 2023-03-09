@@ -24,7 +24,7 @@ final class CollectionViewCell: UICollectionViewCell {
     var avatar: String?
     private var count: Int = 0
     
-    func configure(name: String, avatar: String) {
+    func configure(name: String, avatar: String, count: String) {
         nameLabel.text = name
         photoImageView.image = UIImage(named: avatar)
         
@@ -34,13 +34,15 @@ final class CollectionViewCell: UICollectionViewCell {
     @objc private func tappedHeart(_ sender: UIButton) {
         isSelected.toggle()
         if isSelected {
-            heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            heartButton.tintColor = .lightGray
-            countLabel.text = "0"
+            tappedHeart(imageName: "heart", tintColor: .lightGray, count: "0")
         } else {
-            heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            heartButton.tintColor = .red
-            countLabel.text = "1"
+            tappedHeart(imageName: "heart.fill", tintColor: .red, count: "1")
         }
+    }
+    
+    private func tappedHeart(imageName: String, tintColor: UIColor, count: String) {
+        heartButton.setImage(UIImage(systemName: imageName), for: .normal)
+        heartButton.tintColor = tintColor
+        countLabel.text = count
     }
 }

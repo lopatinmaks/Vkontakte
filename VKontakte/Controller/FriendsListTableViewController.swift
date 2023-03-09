@@ -41,7 +41,7 @@ final class FriendsListTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 44.0
         
         for human in friends {
-            let firstLetter = human.name.first!
+            guard let firstLetter = human.name.first else { return }
             
             if sections[firstLetter] != nil {
                 sections[firstLetter]?.append(human)
@@ -77,7 +77,7 @@ final class FriendsListTableViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sectionTitles.map{ String($0)}
+        return sectionTitles.map { String($0) }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
