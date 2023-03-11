@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7777CDD429BC90F800A00C6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */; };
+		7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */; };
+		7777CDD829BC92D800A00C6A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD729BC92D800A00C6A /* News.swift */; };
 		77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */; };
 		77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */; };
 		77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7777CDD729BC92D800A00C6A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		77BACDC0297FDFB000AA63F5 /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				77BACDEB2983B53F00AA63F5 /* Friends.swift */,
+				7777CDD729BC92D800A00C6A /* News.swift */,
 				77BACDFA29840B5A00AA63F5 /* MyGroups.swift */,
 			);
 			path = Model;
@@ -109,6 +116,7 @@
 				77BACDDB29810AFD00AA63F5 /* GroupsTableViewController.swift */,
 				77BACDF32983F95000AA63F5 /* PersonCollectionViewController.swift */,
 				77BACDF12983BBC100AA63F5 /* FriendsListTableViewController.swift */,
+				7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */,
 				77BACDC7297FDFB000AA63F5 /* LoginViewController.swift */,
 				77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */,
 				77BACDDD29810B7100AA63F5 /* GlobalSearchTableViewController.swift */,
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				77BACDFC298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift */,
+				7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */,
 				77BACDF52983FD1400AA63F5 /* CollectionViewCell.swift */,
 				77BACDED2983B62400AA63F5 /* FriendsList.swift */,
 				77BACDF829840A0700AA63F5 /* GroupCell.swift */,
@@ -201,17 +210,20 @@
 			files = (
 				77BACDF62983FD1400AA63F5 /* CollectionViewCell.swift in Sources */,
 				77BACDEE2983B62400AA63F5 /* FriendsList.swift in Sources */,
+				7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */,
 				77BACDF929840A0700AA63F5 /* GroupCell.swift in Sources */,
 				77BACDC8297FDFB000AA63F5 /* LoginViewController.swift in Sources */,
 				77BACDEC2983B53F00AA63F5 /* Friends.swift in Sources */,
 				77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */,
 				77BACDDE29810B7100AA63F5 /* GlobalSearchTableViewController.swift in Sources */,
 				77BACDFB29840B5A00AA63F5 /* MyGroups.swift in Sources */,
+				7777CDD429BC90F800A00C6A /* NewsTableViewController.swift in Sources */,
 				77BACDF42983F95100AA63F5 /* PersonCollectionViewController.swift in Sources */,
 				77BACDF22983BBC100AA63F5 /* FriendsListTableViewController.swift in Sources */,
 				77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */,
 				77BACDDC29810AFD00AA63F5 /* GroupsTableViewController.swift in Sources */,
 				77BACDFD298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift in Sources */,
+				7777CDD829BC92D800A00C6A /* News.swift in Sources */,
 				77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,8 @@ final class GroupsTableViewController: UITableViewController {
     
     //MARK: - Propertys array
     
+    let searchBar = UISearchBar()
+    
     private var myGroups = [
         MyGroups(nameOfGroup: "Сам себе психолог", avatarGroup: "15"),
         MyGroups(nameOfGroup: "Котики", avatarGroup: "16"),
@@ -25,12 +27,19 @@ final class GroupsTableViewController: UITableViewController {
         MyGroups(nameOfGroup: "Что за лев этот тигр", avatarGroup: "25"),
         MyGroups(nameOfGroup: "Семейное кафе Ложки- Вилки", avatarGroup: "26")
     ]
+    
+    var filteredMyGroups = [String]()
+    var isSearching = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44.0
+        
+        searchBar.delegate = self
+        searchBar.frame = .init(x: 0, y: 0, width: 0, height: 50)
+        tableView.tableHeaderView = searchBar
     }
     
     //MARK: - IBAction and method for add group
@@ -45,16 +54,22 @@ final class GroupsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myGroups.count
+        if isSearching {
+            return filteredMyGroups.count
+        } else {
+            return myGroups.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupsCell", for: indexPath) as? GroupCell else { fatalError() }
-        
         let info = myGroups[indexPath.row]
         
-        cell.configure(groups: info)
-    
+        if isSearching {
+            cell.textLabel?.text = filteredMyGroups[indexPath.row]
+        } else {
+            cell.configure(groups: info)
+        }
         return cell
     }
     
@@ -83,4 +98,29 @@ final class GroupsTableViewController: UITableViewController {
     }
 }
 
-
+extension GroupsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredMyGroups.removeAll()
+        guard searchText != "" || searchText != " " else {
+            return
+        }
+        
+        for item in myGroups {
+            let text = searchText.lowercased()
+            let isArrayContain = item.nameOfGroup.lowercased().ranges(of: text)
+            
+            if isArrayContain != nil {
+                filteredMyGroups.append(item.nameOfGroup)
+            }
+        }
+        
+        if searchBar.text == "" {
+            isSearching = false
+            tableView.reloadData()
+        } else {
+            isSearching = true
+            filteredMyGroups = myGroups.map { $0.nameOfGroup }.filter{ $0.localizedStandardContains(searchText) }
+            tableView.reloadData()
+        }
+    }
+}

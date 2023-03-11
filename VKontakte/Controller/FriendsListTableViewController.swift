@@ -12,20 +12,20 @@ final class FriendsListTableViewController: UITableViewController {
     //MARK: - Propertys array
     
     private var friends = [
-        Friends(name: "Брат", avatar: "1"),
-        Friends(name: "Сестра", avatar: "2"),
-        Friends(name: "Дедуля", avatar: "3"),
-        Friends(name: "Мама", avatar: "4"),
-        Friends(name: "Евгений Сычев", avatar: "5"),
-        Friends(name: "Муж сестры", avatar: "6"),
-        Friends(name: "София Царева", avatar: "7"),
-        Friends(name: "Виктория Иванова", avatar: "8"),
-        Friends(name: "Адриано Челентано", avatar: "9"),
-        Friends(name: "Коля- крыша", avatar: "10"),
-        Friends(name: "Анзорик криптомиллионер", avatar: "11"),
-        Friends(name: "Игнат Зайцев", avatar: "12"),
-        Friends(name: "Люда брови", avatar: "13"),
-        Friends(name: "Отамай Зантунгатова", avatar: "14")
+        Friends(name: "Иванов Иван", avatar: "1"),
+        Friends(name: "Матвеева Людмила", avatar: "2"),
+        Friends(name: "Матвеев Серафим", avatar: "3"),
+        Friends(name: "Самсонова Ангелина", avatar: "4"),
+        Friends(name: "Сычев Евгений", avatar: "5"),
+        Friends(name: "Каюмов Альмир", avatar: "6"),
+        Friends(name: "Царева София", avatar: "7"),
+        Friends(name: "Иванова Виктория", avatar: "8"),
+        Friends(name: "Челентано Адриано", avatar: "9"),
+        Friends(name: "Валуев Николай", avatar: "10"),
+        Friends(name: "Карапетян Анзор", avatar: "11"),
+        Friends(name: "Зайцев Игнат", avatar: "12"),
+        Friends(name: "Бровкина Людмила", avatar: "13"),
+        Friends(name: "Зантунгатова Отамай", avatar: "14")
     ]
     
     private var sections: [Character: [Friends]] = [:]
