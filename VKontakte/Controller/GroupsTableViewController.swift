@@ -54,13 +54,7 @@ final class GroupsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         guard isSearching else { return myGroups.count }
-//        if isSearching {
-//            return filteredMyGroups.count
-//        } else {
-//            return myGroups.count
-//        }
         return filteredMyGroups.count
     }
     
