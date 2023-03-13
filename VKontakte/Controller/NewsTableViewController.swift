@@ -19,11 +19,6 @@ final class NewsTableViewController: UITableViewController {
         News(avatar: "1", date: "5 мар в 10:12", name: "Sergei Klimovskikh", description: "Как здорово, когда твои детские не реализованные мечты все-таки сбываются, да еще и привлекают к этому всех твоих родных и близких людей! Ну вот тренировки пропустил КОННАЯ УСАДЬБА, хоть пост написал", photo: "123")
     ]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

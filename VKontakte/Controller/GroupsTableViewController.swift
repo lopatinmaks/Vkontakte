@@ -11,7 +11,7 @@ final class GroupsTableViewController: UITableViewController {
     
     //MARK: - Propertys array
     
-    let searchBar = UISearchBar()
+    private let searchBar = UISearchBar()
     
     private var myGroups = [
         MyGroups(nameOfGroup: "Сам себе психолог", avatarGroup: "15"),
@@ -28,8 +28,8 @@ final class GroupsTableViewController: UITableViewController {
         MyGroups(nameOfGroup: "Семейное кафе Ложки- Вилки", avatarGroup: "26")
     ]
     
-    var filteredMyGroups = [String]()
-    var isSearching = false
+    private var filteredMyGroups = [String]()
+    private var isSearching = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ final class GroupsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 44.0
         
         searchBar.delegate = self
-        searchBar.frame = .init(x: 0, y: 0, width: 0, height: 50)
+        searchBar.frame = CGRect(x: 0, y: 0, width: 0, height: 50)
         tableView.tableHeaderView = searchBar
     }
     
@@ -54,11 +54,14 @@ final class GroupsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
-            return filteredMyGroups.count
-        } else {
-            return myGroups.count
-        }
+
+        guard isSearching else { return myGroups.count }
+//        if isSearching {
+//            return filteredMyGroups.count
+//        } else {
+//            return myGroups.count
+//        }
+        return filteredMyGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,10 +103,8 @@ final class GroupsTableViewController: UITableViewController {
 
 extension GroupsTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filteredMyGroups.removeAll()
-        guard searchText != "" || searchText != " " else {
-            return
-        }
+        filteredMyGroups.removeAll()
+        guard searchText != "" || searchText != " " else { return }
         
         for item in myGroups {
             let text = searchText.lowercased()
@@ -114,7 +115,7 @@ extension GroupsTableViewController: UISearchBarDelegate {
             }
         }
         
-        if searchBar.text == "" {
+        if searchText.isEmpty {
             isSearching = false
             tableView.reloadData()
         } else {
