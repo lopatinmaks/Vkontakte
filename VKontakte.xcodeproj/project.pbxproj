@@ -10,6 +10,7 @@
 		7777CDD429BC90F800A00C6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */; };
 		7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */; };
 		7777CDD829BC92D800A00C6A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD729BC92D800A00C6A /* News.swift */; };
+		7777CDDA29C303B400A00C6A /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD929C303B400A00C6A /* LaunchScreenViewController.swift */; };
 		77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */; };
 		77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */; };
 		77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7777CDD729BC92D800A00C6A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		7777CDD929C303B400A00C6A /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		77BACDC0297FDFB000AA63F5 /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				77BACDDB29810AFD00AA63F5 /* GroupsTableViewController.swift */,
+				7777CDD929C303B400A00C6A /* LaunchScreenViewController.swift */,
 				77BACDF32983F95000AA63F5 /* PersonCollectionViewController.swift */,
 				77BACDF12983BBC100AA63F5 /* FriendsListTableViewController.swift */,
 				7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */,
@@ -224,6 +227,7 @@
 				77BACDDC29810AFD00AA63F5 /* GroupsTableViewController.swift in Sources */,
 				77BACDFD298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift in Sources */,
 				7777CDD829BC92D800A00C6A /* News.swift in Sources */,
+				7777CDDA29C303B400A00C6A /* LaunchScreenViewController.swift in Sources */,
 				77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
