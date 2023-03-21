@@ -35,8 +35,14 @@ final class CollectionViewCell: UICollectionViewCell {
         isSelected.toggle()
         if isSelected {
             tappedHeart(imageName: "heart", tintColor: .lightGray, count: "0")
+            UIView.animate(withDuration: 5.0) {
+                self.countLabel.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            }
         } else {
             tappedHeart(imageName: "heart.fill", tintColor: .red, count: "1")
+            UIView.animate(withDuration: 5.0) {
+                self.countLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            }
         }
     }
     

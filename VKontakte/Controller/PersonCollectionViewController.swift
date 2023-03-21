@@ -20,6 +20,7 @@ final class PersonCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,5 +40,13 @@ final class PersonCollectionViewController: UICollectionViewController {
         cell.configure(name: name ?? defaultPhoto, avatar: picture ?? defaultPhoto, count: countHeart)
 
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5) {
+                cell?.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                cell?.transform = .identity
+        }
     }
 }
