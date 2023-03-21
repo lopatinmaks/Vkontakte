@@ -11,6 +11,7 @@
 		7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */; };
 		7777CDD829BC92D800A00C6A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD729BC92D800A00C6A /* News.swift */; };
 		7777CDDA29C303B400A00C6A /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD929C303B400A00C6A /* LaunchScreenViewController.swift */; };
+		77932FD029C8704300F1A102 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77932FCF29C8704300F1A102 /* CustomView.swift */; };
 		77B4B1F629B0CB7100D341D8 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */; };
 		77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */; };
 		77BACDC6297FDFB000AA63F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BACDC5297FDFB000AA63F5 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7777CDD729BC92D800A00C6A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		7777CDD929C303B400A00C6A /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		77932FCF29C8704300F1A102 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		77B4B1F529B0CB7100D341D8 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		77BACDC0297FDFB000AA63F5 /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BACDC3297FDFB000AA63F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				77BACDFC298414E500AA63F5 /* GlobalSearchCellTableViewCell.swift */,
 				7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */,
+				77932FCF29C8704300F1A102 /* CustomView.swift */,
 				77BACDF52983FD1400AA63F5 /* CollectionViewCell.swift */,
 				77BACDED2983B62400AA63F5 /* FriendsList.swift */,
 				77BACDF829840A0700AA63F5 /* GroupCell.swift */,
@@ -216,6 +219,7 @@
 				7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */,
 				77BACDF929840A0700AA63F5 /* GroupCell.swift in Sources */,
 				77BACDC8297FDFB000AA63F5 /* LoginViewController.swift in Sources */,
+				77932FD029C8704300F1A102 /* CustomView.swift in Sources */,
 				77BACDEC2983B53F00AA63F5 /* Friends.swift in Sources */,
 				77BACDC4297FDFB000AA63F5 /* AppDelegate.swift in Sources */,
 				77BACDDE29810B7100AA63F5 /* GlobalSearchTableViewController.swift in Sources */,

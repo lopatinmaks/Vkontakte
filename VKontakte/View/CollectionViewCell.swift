@@ -37,7 +37,6 @@ final class CollectionViewCell: UICollectionViewCell {
             tappedHeart(imageName: "heart", tintColor: .lightGray, count: "0")
             UIView.animate(withDuration: 5.0) {
                 self.countLabel.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-                //self.countLabel.transform = .identity
             }
         } else {
             tappedHeart(imageName: "heart.fill", tintColor: .red, count: "1")
