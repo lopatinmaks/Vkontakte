@@ -29,7 +29,15 @@ final class CollectionViewCell: UICollectionViewCell {
         photoImageView.image = UIImage(named: avatar)
         
         heartButton.addTarget(self, action: #selector(tappedHeart(_ :)), for: .touchUpInside)
+        
+//        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipe(gesture: )))
+//        swipeGesture.direction = .left
+//        photoImageView.addGestureRecognizer(swipeGesture)
     }
+    
+//    @objc private func onSwipe(gesture: UISwipeGestureRecognizer) {
+//        print("left")
+//    }
     
     @objc private func tappedHeart(_ sender: UIButton) {
         isSelected.toggle()
