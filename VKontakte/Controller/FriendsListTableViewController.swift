@@ -34,8 +34,13 @@ final class FriendsListTableViewController: UITableViewController {
     var name: Friends?
     var picture: Friends?
     
+    var radius: CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        showScreen()
+        customAnimateNext()
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44.0
@@ -50,6 +55,33 @@ final class FriendsListTableViewController: UITableViewController {
             }
         }
         sectionTitles = Array(sections.keys)
+    }
+    
+    private func showScreen() {
+        let screenGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(onScreen(sender: )))
+        screenGesture.edges = .left
+        screenGesture.delegate = self
+        view.addGestureRecognizer(screenGesture)
+    }
+    
+    @objc private func onScreen(sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.state == .ended, radius == 360.0 {
+                self.radius = 0.0
+        }
+        
+        UIView.animate(withDuration: 1.0) {
+            self.radius += 90
+            self.view.transform = CGAffineTransform(rotationAngle:
+                                                        self.radius * CGFloat(Double.pi) / 180.0)
+        }
+    }
+    
+    private func customAnimateNext() {
+        let personVC = PersonCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        personVC.modalTransitionStyle = .crossDissolve
+        personVC.transitioningDelegate = self
+        
+        present(personVC, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,3 +137,53 @@ final class FriendsListTableViewController: UITableViewController {
         performSegue(withIdentifier: "personVC", sender: nil)
     }
 }
+
+extension FriendsListTableViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+}
+
+extension FriendsListTableViewController: UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 3.0
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let fromView = transitionContext.viewController(forKey: .from)?.view,
+              let toView = transitionContext.viewController(forKey: .to)?.view else { return }
+        
+        let isPresenting = (fromView == view)
+        
+        let presentingView = isPresenting ? toView : fromView
+        
+        if isPresenting {
+            transitionContext.containerView.addSubview(presentingView)
+        }
+        
+        let size = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        
+        let offScreenFrame = CGRect(origin: CGPoint(x: size.width / 1.1, y: 0), size: size)
+        let onScreenFrame = CGRect(origin: .zero, size: size)
+        
+        presentingView.frame = isPresenting ? offScreenFrame : onScreenFrame
+        
+        let animationDuration = transitionDuration(using: transitionContext)
+        
+        UIView.animate(withDuration: animationDuration) {
+            presentingView.frame = isPresenting ? onScreenFrame : offScreenFrame
+        } completion: { isSuccess in
+            if !isPresenting {
+                transitionContext.completeTransition(isSuccess)
+            } else {
+                presentingView.removeFromSuperview()
+            }
+        }
+    }
+}
+
+extension FriendsListTableViewController: UIGestureRecognizerDelegate {}
