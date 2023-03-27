@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7722A33229D19C4500D8111A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722A33129D19C4500D8111A /* Session.swift */; };
 		7777CDD429BC90F800A00C6A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */; };
 		7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */; };
 		7777CDD829BC92D800A00C6A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777CDD729BC92D800A00C6A /* News.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7722A33129D19C4500D8111A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7777CDD329BC90F800A00C6A /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		7777CDD529BC91E300A00C6A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7777CDD729BC92D800A00C6A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				77BACDCC297FDFB400AA63F5 /* Assets.xcassets */,
 				77BACDCE297FDFB400AA63F5 /* LaunchScreen.storyboard */,
 				77BACDD1297FDFB400AA63F5 /* Info.plist */,
+				7722A33129D19C4500D8111A /* Session.swift */,
 			);
 			path = VKontakte;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7722A33229D19C4500D8111A /* Session.swift in Sources */,
 				77BACDF62983FD1400AA63F5 /* CollectionViewCell.swift in Sources */,
 				77BACDEE2983B62400AA63F5 /* FriendsList.swift in Sources */,
 				7777CDD629BC91E300A00C6A /* NewsTableViewCell.swift in Sources */,
