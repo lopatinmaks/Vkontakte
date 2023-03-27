@@ -65,10 +65,8 @@ final class FriendsListTableViewController: UITableViewController {
     }
     
     @objc private func onScreen(sender: UIScreenEdgePanGestureRecognizer) {
-        if sender.state == .ended {
-            if self.radius == 360.0 {
+        if sender.state == .ended, radius == 360.0 {
                 self.radius = 0.0
-            }
         }
         
         UIView.animate(withDuration: 1.0) {
@@ -180,9 +178,10 @@ extension FriendsListTableViewController: UIViewControllerAnimatedTransitioning 
             presentingView.frame = isPresenting ? onScreenFrame : offScreenFrame
         } completion: { isSuccess in
             if !isPresenting {
-                //presentingView.removeFromSuperview()
+                transitionContext.completeTransition(isSuccess)
+            } else {
+                presentingView.removeFromSuperview()
             }
-            transitionContext.completeTransition(isSuccess)
         }
     }
 }
